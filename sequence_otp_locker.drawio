@@ -1,0 +1,114 @@
+<mxfile host="app.diagrams.net" modified="2026-09-14T16:20:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="locker-otp-sequence" name="Sequence Diagram - OTP Locker">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Actor -->
+        <mxCell id="actor" value="Khách nhận hàng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="65" y="30" width="85" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="actorLine" value="" style="dashed=1;dashPattern=4 4;strokeColor=#ffffff;html=1;" vertex="1" parent="1">
+          <mxGeometry x="105" y="130" width="1" height="530" as="geometry"/>
+        </mxCell>
+
+        <!-- LockerTerminal -->
+        <mxCell id="locker" value="LockerTerminal" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1b1b1b;fontColor=#ffffff;strokeColor=#ffffff;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="140" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="lockerLine" value="" style="dashed=1;dashPattern=4 4;strokeColor=#ffffff;html=1;" vertex="1" parent="1">
+          <mxGeometry x="319" y="82" width="1" height="510" as="geometry"/>
+        </mxCell>
+        <mxCell id="lockerAct1" value="" style="fillColor=#222222;strokeColor=#ffffff;html=1;" vertex="1" parent="1">
+          <mxGeometry x="313" y="185" width="12" height="65" as="geometry"/>
+        </mxCell>
+        <mxCell id="lockerAct2" value="" style="fillColor=#222222;strokeColor=#ffffff;html=1;" vertex="1" parent="1">
+          <mxGeometry x="313" y="245" width="12" height="310" as="geometry"/>
+        </mxCell>
+
+        <!-- PackageService -->
+        <mxCell id="package" value="PackageService" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1b1b1b;fontColor=#ffffff;strokeColor=#ffffff;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="500" y="20" width="140" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="packageLine" value="" style="dashed=1;dashPattern=4 4;strokeColor=#ffffff;html=1;" vertex="1" parent="1">
+          <mxGeometry x="569" y="82" width="1" height="510" as="geometry"/>
+        </mxCell>
+        <mxCell id="packageAct" value="" style="fillColor=#222222;strokeColor=#ffffff;html=1;" vertex="1" parent="1">
+          <mxGeometry x="563" y="245" width="12" height="250" as="geometry"/>
+        </mxCell>
+
+        <!-- Message: receive OTP -->
+        <mxCell id="m1" value="Nhận mã OTP" style="edgeStyle=none;html=1;strokeColor=#ffffff;endArrow=block;endFill=1;fontColor=#ffffff;fontSize=14;labelBackgroundColor=#1b1b1b;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="112" y="185" as="sourcePoint"/>
+            <mxPoint x="313" y="185" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Message: verify otp -->
+        <mxCell id="m2" value="verify_otp()" style="edgeStyle=none;html=1;strokeColor=#ffffff;endArrow=block;endFill=1;fontColor=#ffffff;fontSize=14;labelBackgroundColor=#1b1b1b;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="325" y="245" as="sourcePoint"/>
+            <mxPoint x="563" y="245" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ALT frame -->
+        <mxCell id="altFrame" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#ffffff;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="275" width="715" height="385" as="geometry"/>
+        </mxCell>
+        <mxCell id="altLabelBox" value="alt" style="shape=mxgraph.basic.parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fillColor=#1b1b1b;strokeColor=#ffffff;fontColor=#ffffff;fontStyle=2;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="50" y="275" width="76" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Divider -->
+        <mxCell id="divider" value="" style="edgeStyle=none;html=1;strokeColor=#ffffff;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="50" y="410" as="sourcePoint"/>
+            <mxPoint x="765" y="410" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Correct branch -->
+        <mxCell id="guard1" value="[OTP đúng]" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#ffffff;fontStyle=1;fontSize=14;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="300" y="300" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="return1" value="Kết quả hợp lệ" style="edgeStyle=none;html=1;strokeColor=#ffffff;dashed=1;dashPattern=6 4;endArrow=open;endFill=0;fontColor=#ffffff;fontSize=14;labelBackgroundColor=#1b1b1b;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="563" y="345" as="sourcePoint"/>
+            <mxPoint x="325" y="345" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="openSuccess" value="Mở tủ thành công" style="edgeStyle=none;html=1;strokeColor=#ffffff;dashed=1;dashPattern=6 4;endArrow=open;endFill=0;fontColor=#ffffff;fontSize=14;labelBackgroundColor=#1b1b1b;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="313" y="385" as="sourcePoint"/>
+            <mxPoint x="112" y="385" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Wrong branch -->
+        <mxCell id="guard2" value="[OTP sai]" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#ffffff;fontStyle=1;fontSize=14;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="300" y="425" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="return2" value="Kết quả không hợp lệ" style="edgeStyle=none;html=1;strokeColor=#ffffff;dashed=1;dashPattern=6 4;endArrow=open;endFill=0;fontColor=#ffffff;fontSize=14;labelBackgroundColor=#1b1b1b;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="563" y="470" as="sourcePoint"/>
+            <mxPoint x="325" y="470" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="retry" value="Mã OTP không đúng, vui lòng thử lại" style="edgeStyle=none;html=1;strokeColor=#ffffff;dashed=1;dashPattern=6 4;endArrow=open;endFill=0;fontColor=#ffffff;fontSize=14;labelBackgroundColor=#1b1b1b;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="313" y="525" as="sourcePoint"/>
+            <mxPoint x="112" y="525" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Ordering hints / labels -->
+        <mxCell id="note" value="Sequence Diagram: Xác thực OTP để mở tủ nhận hàng" style="text;html=1;strokeColor=none;fillColor=none;fontColor=#ffffff;fontSize=16;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="690" width="600" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
